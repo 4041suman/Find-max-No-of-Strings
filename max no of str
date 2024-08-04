@@ -1,0 +1,21 @@
+class Solution {
+    public int maximumNumberOfStringPairs(String[] words) {
+        int count=0;
+        for(int i=0;i<words.length;i++){
+            for(int j=0;j<words.length;j++){
+                if(i<j){
+                    String word1=words[i];
+                    String word2=words[j];
+                    char[] ch=word1.toCharArray();
+                    char[] ch1=word2.toCharArray();
+                    Arrays.sort(ch);
+                    Arrays.sort(ch1);
+                    if(Arrays.equals(ch,ch1)){
+                        count++;
+                    }
+                }
+            }
+        }
+        return count;
+    }
+}
